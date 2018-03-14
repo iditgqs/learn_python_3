@@ -49,3 +49,5 @@ update students set idDelete = 1 where 条件; ------>逻辑删除
 1. mysql -uroot -p 
 2. create database py charset=utf8;
 3. mysql -uroot -p py < userDir/bak.sql
+
+
