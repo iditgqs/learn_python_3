@@ -7,7 +7,7 @@
 ```
 create database students charset=utf8;
 show databases;
-use table;
+use database;
 show tables;
 select database();
 create table students(
