@@ -13,9 +13,8 @@ no action 什么都不做
 2. 连接查询:join on
 ```
 inner join on	:内连接		---->所有都匹配的才会出现不会前后
-left join on	: 左连接	---->只要left join 前有就有
-right join on	:右连接		---->只要right join 后有就有
-但都有inner join 的部分
+left join on	:左连接		---->只要left join 前有就有
+right join on	:右连接		---->只要right join 后有就有,但都有inner join 的部分
 ```
 3. 最终编写顺序
 ```

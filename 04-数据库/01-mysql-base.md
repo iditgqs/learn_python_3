@@ -15,6 +15,7 @@ id int auto_increment primary key not null,
 name varchar(10) not null,
 birthday datatime,
 gender bit default 1,
+money decimal(9,2) not null,
 isDelete bit default 0
 );
 
@@ -22,7 +23,7 @@ alter table students add | change | drop 字段 类型;
 drop table students;
 rename table students to stu;
 show create talbe students;
-desc 表名;
+desc students;
 ```
 
 ## 表中相关数据操作
@@ -31,7 +32,8 @@ select * from students;
 insert into students values(null, "gqs","1990-01-10", 1, 0 );
 insert into students(name, gender, birthday) values ('th', 0, '1910-9-9');
 insert into students() values(),()...   ---------> mysql独有
-update students set name='',,, where 条件;
+update students set name=''... where 条件;
+
 delete from students where 条件; -------> 物理删除
 update students set idDelete = 1 where 条件; ------>逻辑删除
 ```

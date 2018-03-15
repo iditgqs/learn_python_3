@@ -15,12 +15,12 @@
 	注意重复字段问题:id...	
 
 ```
-	# 没有使用视力view
+	# 没有使用视图view
 	select * from scores
 	inner join students on students.id = scores.stuid
 	inner join subjects on subjects.id = scores.subid;
 
-	# 添加到视力view
+	# 添加到视图view
 	create view v_stu_sub_score as
 	# select * from scores
 	select scores.*,students.name,subjects.title from scores
@@ -35,22 +35,24 @@
 	4. 持久性
 	当数据被更改时:考虑事务(insert, update, delete)
 	```
-	开启begin;
-	提交commit;
-	回滚rollback;
+	开启	begin;
+	提交	commit;
+	回滚	rollback;
 	```
 
 5. 索引(index)
-	show index from students;
+  show index from students;
 
-	主键和唯一都是索引
-	尽量列为避免null
-	where后等值的写在范围前(能不用or别用)
-	
-	create index indexName on students(name(len));
-	drop index indexName on students;
+  主键和唯一都是索引
+  尽量列为避免null
+  where后等值的写在范围前(能不用or别用)
 
+  ```
+  create index indexName on students(name(len));
+  drop index indexName on students;
 
-	show profiles;  ----> 性能监测工具
-	set profiling = 1 --->开启性能监测
-	
+  show profiles;  ----> 性能监测工具
+  set profiling = 1 --->开启性能监测
+  ```
+
+  ​
