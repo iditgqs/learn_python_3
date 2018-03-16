@@ -9,6 +9,9 @@ restrict 不让删除,报错
 cascade	一并删除
 set null 添加null
 no action 什么都不做
+
+# 添加外键
+alter table xxxtable add constraint foreignName foreign key(xxid) references newtable(id)
 ```
 2. 连接查询:join on
 ```

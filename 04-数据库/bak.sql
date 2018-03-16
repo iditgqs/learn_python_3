@@ -87,7 +87,7 @@ CREATE TABLE `students` (
   `gender` bit(1) DEFAULT b'1',
   `isDelete` bit(1) DEFAULT b'0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,'gqs','1920-09-09 00:00:00','','\0'),(2,'abc','1950-08-09 00:00:00','\0','\0'),(3,'li','1990-08-09 00:00:00','','\0'),(4,'dj','1998-10-09 00:00:00','','\0'),(5,'qc','1997-10-09 00:00:00','\0','\0');
+INSERT INTO `students` VALUES (1,'gqs','1920-09-09 00:00:00','','\0'),(2,'abc','1950-08-09 00:00:00','\0','\0'),(3,'李好','1990-08-09 00:00:00','','\0'),(4,'dj','1998-10-09 00:00:00','','\0'),(5,'qc','1997-10-09 00:00:00','\0','\0'),(9,'python2',NULL,'','\0'),(10,'abc',NULL,'','\0');
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,40 +126,30 @@ INSERT INTO `subjects` VALUES (1,'linux','\0'),(2,'java','\0'),(3,'python','\0')
 UNLOCK TABLES;
 
 --
--- Temporary table structure for view `v_stu_sub_score`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `v_stu_sub_score`;
-/*!50001 DROP VIEW IF EXISTS `v_stu_sub_score`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE VIEW `v_stu_sub_score` AS SELECT 
- 1 AS `id`,
- 1 AS `score`,
- 1 AS `stuid`,
- 1 AS `subid`,
- 1 AS `isDelete`,
- 1 AS `name`,
- 1 AS `title`*/;
-SET character_set_client = @saved_cs_client;
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `passwd` char(40) NOT NULL,
+  `isDelete` bit(1) DEFAULT b'0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Final view structure for view `v_stu_sub_score`
+-- Dumping data for table `users`
 --
 
-/*!50001 DROP VIEW IF EXISTS `v_stu_sub_score`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `v_stu_sub_score` AS select `scores`.`id` AS `id`,`scores`.`score` AS `score`,`scores`.`stuid` AS `stuid`,`scores`.`subid` AS `subid`,`scores`.`isDelete` AS `isDelete`,`students`.`name` AS `name`,`subjects`.`title` AS `title` from ((`scores` join `students` on((`students`.`id` = `scores`.`stuid`))) join `subjects` on((`subjects`.`id` = `scores`.`subid`))) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'lichao','40bd001563085fc35165329ea1ff5c5ecbdbbeef','\0'),(2,'guoqiangsheng','f10545a4e573724337282763225c334c734d3211','\0');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -170,4 +160,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-15 22:32:03
+-- Dump completed on 2018-03-16 16:16:33
