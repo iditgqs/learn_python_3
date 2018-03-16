@@ -5,8 +5,8 @@
 	2. 判断相关关系
 	3. 判断是否有分组(出现聚合---->考虑分组,只有聚合不用分组,部分信息考虑分组)
 
-2. 自关联   source xxx.sql--->导入sql
-	1. 自己有自己的外键连接
+2. 自关联   mysql> source xxx.sql--->导入sql
+	1. 自己有自己的外键连接关系
 
 3. 视图----> 对于复杂的查询,不利于维护:解决方法--->定义视图
 	
@@ -29,16 +29,20 @@
 ```
 
 4. 事务(ACID)
-	1. 原子性
-	2. 一致性
-	3. 隔离性
-	4. 持久性
-	当数据被更改时:考虑事务(insert, update, delete)
-	```
-	开启	begin;
-	提交	commit;
-	回滚	rollback;
-	```
+  1. 原子性
+
+  2. 一致性
+
+  3. 隔离性
+
+  4. 持久性
+
+    当数据被更改时:考虑事务(insert, update, delete)
+  ```
+  开启	begin;
+  提交	commit;
+  回滚	rollback;
+  ```
 
 5. 索引(index)
   show index from students;

@@ -1,5 +1,5 @@
 # 关系(E-R)
-引用主键:第三范式
+#### 引用主键:第三范式
 A 对 B 是一对多,关系字段存在于B表中
 1. 外键约束:保证关系的正确性,有效性
 ```
@@ -11,7 +11,7 @@ set null 添加null
 no action 什么都不做
 
 # 添加外键
-alter table xxxtable add constraint foreignName foreign key(xxid) references newtable(id)
+alter table scores add constraint stu_score foreign key(sutid) references students(id)
 ```
 2. 连接查询:join on
 ```

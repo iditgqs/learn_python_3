@@ -1,7 +1,21 @@
 # mysql
 
 概念:数据库,表,行,字段,E-R模型,三范式
-完整性:字段的类型,约束
+##### 完整性:字段的类型
+
+- 数字：int,decimal
+- 字符串：varchar,text
+- 日期：datetime
+- 布尔：bit
+##### 约束
+
+- 主键 primary key
+- 非空 not null
+- 惟一 unique
+- 默认 default
+- 外键 foreign key
+- 检查 check ---->(mysql不支持)
+
 
 ## 表的相关操作
 ```
