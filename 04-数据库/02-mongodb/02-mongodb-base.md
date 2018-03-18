@@ -1,15 +1,12 @@
 ## mongodb数据库操作
-    ```
     db
     show dbs
     use database
     db.dropDatabase()
-    db.createCollection(name, options) --->optons:{capped:treu, size:10...}
+    db.createCollection(name, options) --->optons:{capped:true, size:10...}
     show collections
     db.stu.drop() -->删除stu集合
-    ```
 ## mongodb类型
-    ```
     Object ID
     String
     Boolean
@@ -20,7 +17,6 @@
     Null
     Timestamp
     Date
-    ```
 ### 插入
     db.stu.insert({name:'gqs', gendger:true})
 
